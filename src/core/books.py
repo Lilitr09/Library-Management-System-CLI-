@@ -22,8 +22,8 @@ class LibraryManager(object):
     def __init__(self, database):
         self.database = database
     
-    def add_book(self, book:Book):
-        pass # Ver como implementar esta logica
+    def add_book(self, title:str, author:str, year:int, gender:str):
+        new_book = Book(title, author, year, gender)
     
     def find_by_author(self, author:str):
         pass # Ver como implementar esta logica
