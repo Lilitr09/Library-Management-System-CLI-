@@ -1,6 +1,6 @@
 from src.core.books import Book, LibraryManager
 from src.core.json_handler import load_data
-
+import sys
 
 
 def main():
@@ -29,9 +29,8 @@ def main():
             pass
         elif option == "6":
             pass
-        elif option == "7":
-            print("You exited the program.")
-            break
+        elif option == "0":
+            sys.exit("You exited the program.")
         
 
 def main_menu():
@@ -44,7 +43,11 @@ def main_menu():
     print("|____________*____________|")
     print("|5. See book list         |")
     print("|6. Generate report       |")
-    print("|7. Quit                  |")
+    print("|____________*____________|")
+    print("|7. Register new user     |")
+    print("|8. See registerd users   |")
+    print("|9. Loans                 |")
+    print("|0. Quit                  |")
     print("|____________*____________|")
     option = input("Select a number: ")
     return option
