@@ -1,6 +1,6 @@
 from src.core.books import Book, LibraryManager
-from src.core.json_handler import load_data, save_data, do_backup, create_directory
-import colorama
+from src.core.json_handler import load_data
+
 
 
 def main():
@@ -15,8 +15,9 @@ def main():
             author = input("Author: ")
             year = int(input("Year: "))
             gender = input("Gender: ")
-            new_book = manager.add_book(title, author, year, gender)
-            save_data(new_book)
+            book_id = manager.add_book(title, author, year, gender)  
+            print(f"✅ Book added successfully! ID: {book_id}")
+
         elif option == "2":
             pass
         elif option == "3":
