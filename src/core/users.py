@@ -1,6 +1,6 @@
 from datetime import datetime
 from src.core.json_handler import save_data
-from email_validator import validate_email, EmailNotValidError
+
 
 class User(object):
     user_counter = 0
@@ -55,6 +55,7 @@ class UserManager(object):
         user_dict = new_user.to_dict()
         self.database["users"][new_user.id] = user_dict
         save_data(self.database)
+        return new_user.id
         
     def find_user_by_email(self, email):
         for user, user_info in self.database["users"].items():
