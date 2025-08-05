@@ -3,6 +3,7 @@ from src.core.users import UserManager
 from src.core.json_handler import load_data
 import sys
 from email_validator import validate_email, EmailNotValidError
+from src.core.interface import main_menu
 
 def main():
     db = load_data()
@@ -46,25 +47,6 @@ def main():
         elif option == "0":
             sys.exit("You exited the program.")
         
-
-def main_menu():
-    print(" LIBRARY MANAGEMENT SYSTEM ")
-    print(" _________________________ ")
-    print("|1. Add book              |")
-    print("|2. Find book by author   |")
-    print("|3. Get book by ID        |")
-    print("|4. Delete book           |")
-    print("|____________*____________|")
-    print("|5. See book list         |")
-    print("|6. Generate report       |")
-    print("|____________*____________|")
-    print("|7. Register new user     |")
-    print("|8. See registerd users   |")
-    print("|9. Loans                 |")
-    print("|0. Quit                  |")
-    print("|____________*____________|")
-    option = input("Select a number: ")
-    return option
 
 
 if __name__ == "__main__":
