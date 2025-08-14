@@ -31,5 +31,16 @@
     "loaned_to": null,
     "created_at": "2025-08-13T22:21:40.466581",
     "last_updated": "2025-08-13T22:21:40.466581"
+  },
+  "202508-005": {
+    "id": "202508-005",
+    "title": "It Ends with Us",
+    "author": "Colleen Hoover",
+    "year": 2016,
+    "gender": "Novel",
+    "status": "available",
+    "loaned_to": null,
+    "created_at": "2025-08-14T14:13:17.351390",
+    "last_updated": "2025-08-14T14:13:17.351390"
   }
 }

@@ -76,10 +76,19 @@ def main():
                             log_activity("admin", "new_book_added", f"✅ {new_book.title} added successfully with ID: {new_book.id}")
                         elif option == "2":
                             # Search books
-                            term = input("Search term: ")
-                            results = book_manager.search_books(term)
-                            for book in results:
-                                print(f"{book.id}: {book.title} ({book.author})")
+                            while True:
+                                term = input("Search term: ")
+                                results = book_manager.search_books(term)
+                                for book in results:
+                                    print(f"{book.id}: {book.title} ({book.author})")
+                                option = input("🔙Back (Y/N): ").upper()
+                                if option == "Y":
+                                    break
+                                elif option == "N":
+                                    continue
+                                else:
+                                    print("Invalid choice!")
+                                    pass
                         elif option == "3":
                             # Remove book
                             book_id = input("Enter book ID: ")

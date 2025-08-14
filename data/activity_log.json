@@ -142,5 +142,35 @@
     "user_id": "admin",
     "action": "system_start",
     "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:11:14.201706",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:13:17.351390",
+    "user_id": "admin",
+    "action": "new_book_added",
+    "details": "✅ It Ends with Us added successfully with ID: 202508-005"
+  },
+  {
+    "timestamp": "2025-08-14T14:18:45.426138",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:20:51.395967",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:21:08.991229",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
   }
 ]
