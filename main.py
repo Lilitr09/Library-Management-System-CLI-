@@ -29,7 +29,7 @@ def main():
     user_manager = UserManager(users_data)
 
     # Registrar inicio del sistema
-    log_activity("system", "system_start", "Application initialized")
+    log_activity("admin", "system_start", "Application initialized")
     while True:
         option = main_menu()
         if option == "1":
@@ -49,8 +49,8 @@ def main():
                             year = int(input("Year: "))
                             gender = input("Gender: ")
                             new_book = book_manager.add_book(title, author, year, gender)
-                            print(f"✅ {new_book.title} added successfully with ID: {new_book.id}")
                             save_data("books", books_data)
+                            log_activity("admin", "new_book_added", f"✅ {new_book.title} added successfully with ID: {new_book.id}")
                         elif option == "2":
                             # Search books
                             term = input("Search term: ")
@@ -58,15 +58,17 @@ def main():
                             for book in results:
                                 print(f"{book.id}: {book.title} ({book.author})")
                         elif option == "3":
-                            # Update book details
-                            pass
-                        elif option == "4":
                             # Remove book
-                            pass
-                        elif option == "5":
+                            book_id = input("Enter book ID: ")
+                            book_manager.remove_book(book_id)
+                            print("Book removed")
+                            books_data = {k: v.to_dict() for k, v in book_manager.books.items()}
+                            save_data("books", books_data)
+                            log_activity("admin", "book_removed", f"Book {book_id} removed")
+                        elif option == "3":
                             # View all books
                             pass
-                        elif option == "6":
+                        elif option == "5":
                             break
                         else:
                             print("Invalid choice!")

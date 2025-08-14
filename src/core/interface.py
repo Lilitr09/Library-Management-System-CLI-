@@ -38,10 +38,9 @@ def book_menu():
     print(" _______________________________________")
     print("|           1. Add new book             |")
     print("|           2. Search books             |")
-    print("|           3. Update book details      |")
-    print("|           4. Remove book              |")
-    print("|           5. View all books           |")
-    print("|           6.🔙Back to Admin Panel     |")
+    print("|           3. Remove book              |")
+    print("|           3. View all books           |")
+    print("|           5.🔙Back to Admin Panel     |")
     print("|_______________________________________|")
     option = input(Fore.GREEN + "Select an option: ")
     return option

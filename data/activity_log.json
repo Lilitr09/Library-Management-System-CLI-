@@ -70,5 +70,35 @@
     "user_id": "system",
     "action": "system_start",
     "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T12:03:13.775273",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T12:04:35.646233",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T12:10:54.764770",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T12:11:14.304887",
+    "user_id": "admin",
+    "action": "new_book_added",
+    "details": "✅ Prueba added successfully with ID: 202508-005"
+  },
+  {
+    "timestamp": "2025-08-14T12:12:20.645331",
+    "user_id": "admin",
+    "action": "book_removed",
+    "details": "Book 202508-005 removed"
   }
 ]

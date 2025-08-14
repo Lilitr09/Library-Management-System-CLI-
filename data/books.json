@@ -1,15 +1,4 @@
 {
-  "202508-001": {
-    "id": "202508-001",
-    "title": "Prueba",
-    "author": "Persona",
-    "year": 2000,
-    "gender": "libro",
-    "status": "available",
-    "loaned_to": null,
-    "created_at": "2025-08-13T21:17:51.876051",
-    "last_updated": "2025-08-13T21:17:51.876051"
-  },
   "202508-002": {
     "id": "202508-002",
     "title": "El Principito",

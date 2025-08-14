@@ -104,12 +104,12 @@ class LibraryManager(object):
     def get_book(self, book_id: str) -> Book:
         return self.books.get(book_id)
     
-    def update_book(self, book_id: str, **updates) -> bool:
-        book = self.get_book(book_id)
-        if not book:
-            return False
-        book.update(**updates)
-        return True
+    # def update_book(self, book_id: str, **updates) -> bool:
+    #     book = self.get_book(book_id)
+    #     if not book:
+    #         return False
+    #     book.update(**updates)
+    #     return True
     
     def search_books(self, search_term: str) -> list:
         term = search_term.lower()
@@ -143,4 +143,13 @@ class LibraryManager(object):
         """Convierte todos los libros a diccionarios para almacenamiento"""
         return {book_id: book.to_dict() for book_id, book in self.books.items()}
         
-    # def remove_book(self, )
+    def remove_book(self, book_id):
+        if book_id not in self.books:
+            raise ValueError(f"Book with ID:{book_id} does not exist.")
+        
+        book = self.books[book_id]
+        if book.status != "available":
+            raise ValueError(f"Book: {book_id} cannot be removed | Status: {book.staus}")
+        
+        del self.books[book_id]
+        
