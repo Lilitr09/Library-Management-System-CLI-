@@ -2,6 +2,7 @@ from src.core.books import LibraryManager
 from src.core.users import UserManager
 from src.core.json_handler import load_data, log_activity, save_data
 import sys
+from colorama import init, Fore
 import os
 from email_validator import validate_email, EmailNotValidError
 from src.core.interface import (
@@ -12,7 +13,7 @@ from src.core.interface import (
     user_menu,
     loans_menu,
 )
-
+init(autoreset=True)
 
 def main():
     def clear_screen():
@@ -27,10 +28,32 @@ def main():
     # Inicializar gestores con sus respectivos datos
     book_manager = LibraryManager(books_data)
     user_manager = UserManager(users_data)
+    
+    def view_books(book_manager):
+        """Shows all the books in a simple format"""
+        books = book_manager.get_all_books()
+        
+        if not books:
+            print("No books available in the library")
+            return
+        
+        print(Fore.GREEN + "             Library 📚          ")
+        for book in books:
+            status = "Available" if book.status == "available" else f"Loaned to: {book.loaned_to}"
+            print(Fore.BLUE + " __________________________________________")
+            print(f"  ID: {book.id}                           ")
+            print(f"  {Fore.BLUE + book.title}                ")
+            print(f"  Author: {book.author}                   ")
+            print(f"  Status: {status}                        ")
+            print(Fore.BLUE + " __________________________________________") 
+        print(Fore.YELLOW + "Total books:", len(books))
+        option = input("🔙Back (Y/N): ").upper()
+        return option
 
     # Registrar inicio del sistema
     log_activity("admin", "system_start", "Application initialized")
     while True:
+        clear_screen()
         option = main_menu()
         if option == "1":
             # ----------------- Admin menu--------------------
@@ -65,9 +88,17 @@ def main():
                             books_data = {k: v.to_dict() for k, v in book_manager.books.items()}
                             save_data("books", books_data)
                             log_activity("admin", "book_removed", f"Book {book_id} removed")
-                        elif option == "3":
-                            # View all books
-                            pass
+                        elif option == "4":
+                            while True:
+                                option = view_books(book_manager)
+                                if option == "Y":
+                                    break
+                                elif option == "N":
+                                    clear_screen()
+                                    continue
+                                else:
+                                    print("Invalid choice!")
+                                    pass
                         elif option == "5":
                             break
                         else:

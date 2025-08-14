@@ -152,4 +152,6 @@ class LibraryManager(object):
             raise ValueError(f"Book: {book_id} cannot be removed | Status: {book.staus}")
         
         del self.books[book_id]
-        
+    
+    def get_all_books(self) -> list:
+        return list(self.books.values())

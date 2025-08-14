@@ -39,7 +39,7 @@ def book_menu():
     print("|           1. Add new book             |")
     print("|           2. Search books             |")
     print("|           3. Remove book              |")
-    print("|           3. View all books           |")
+    print("|           4. View all books           |")
     print("|           5.🔙Back to Admin Panel     |")
     print("|_______________________________________|")
     option = input(Fore.GREEN + "Select an option: ")

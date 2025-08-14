@@ -100,5 +100,47 @@
     "user_id": "admin",
     "action": "book_removed",
     "details": "Book 202508-005 removed"
+  },
+  {
+    "timestamp": "2025-08-14T13:53:22.192055",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T13:54:30.551908",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T13:55:15.666189",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T13:57:33.481823",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:02:39.166382",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:06:35.546693",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-14T14:08:54.881381",
+    "user_id": "admin",
+    "action": "system_start",
+    "details": "Application initialized"
   }
 ]
