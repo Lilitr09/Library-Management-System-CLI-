@@ -1,0 +1,74 @@
+[
+  {
+    "timestamp": "2025-08-05T13:39:46.859462",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-05T13:56:32.937752",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-05T14:36:06.836222",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-05T14:37:37.076242",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-05T15:17:47.470176",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T21:12:27.916644",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T21:17:20.070518",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T21:30:03.635657",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T22:03:31.464803",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T22:11:22.574869",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T22:16:14.904507",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  },
+  {
+    "timestamp": "2025-08-13T22:20:30.674618",
+    "user_id": "system",
+    "action": "system_start",
+    "details": "Application initialized"
+  }
+]

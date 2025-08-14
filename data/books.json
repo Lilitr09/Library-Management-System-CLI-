@@ -1,0 +1,46 @@
+{
+  "202508-001": {
+    "id": "202508-001",
+    "title": "Prueba",
+    "author": "Persona",
+    "year": 2000,
+    "gender": "libro",
+    "status": "available",
+    "loaned_to": null,
+    "created_at": "2025-08-13T21:17:51.876051",
+    "last_updated": "2025-08-13T21:17:51.876051"
+  },
+  "202508-002": {
+    "id": "202508-002",
+    "title": "El Principito",
+    "author": "Antoine de Saint-Exupery",
+    "year": 1943,
+    "gender": "novela",
+    "status": "available",
+    "loaned_to": null,
+    "created_at": "2025-08-13T21:31:10.415753",
+    "last_updated": "2025-08-13T21:31:10.415753"
+  },
+  "202508-003": {
+    "id": "202508-003",
+    "title": "Cien años de soledad",
+    "author": "Gabriel Garcia Marquez",
+    "year": 1967,
+    "gender": "Novela",
+    "status": "available",
+    "loaned_to": null,
+    "created_at": "2025-08-13T22:05:44.162295",
+    "last_updated": "2025-08-13T22:05:44.162295"
+  },
+  "202508-004": {
+    "id": "202508-004",
+    "title": "Papa Goriot",
+    "author": "Honore de Balzac",
+    "year": 1835,
+    "gender": "novela",
+    "status": "available",
+    "loaned_to": null,
+    "created_at": "2025-08-13T22:21:40.466581",
+    "last_updated": "2025-08-13T22:21:40.466581"
+  }
+}

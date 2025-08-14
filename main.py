@@ -1,52 +1,155 @@
 from src.core.books import LibraryManager
 from src.core.users import UserManager
-from src.core.json_handler import load_data
+from src.core.json_handler import load_data, log_activity, save_data
 import sys
+import os
 from email_validator import validate_email, EmailNotValidError
-from src.core.interface import main_menu
+from src.core.interface import (
+    main_menu,
+    admin_menu,
+    client_menu,
+    book_menu,
+    user_menu,
+    loans_menu,
+)
+
 
 def main():
-    db = load_data()
-    manager = LibraryManager(db)
-    u_manager = UserManager(db)
+    def clear_screen():
+        os.system('cls' if os.name == 'nt' else 'clear')
+    
+    # Cargar datos desde archivos separados
+    books_data = load_data("books")
+    users_data = load_data("users")
+    active_loans = load_data("active_loans")
+    loan_history = load_data("loan_history")
+
+    # Inicializar gestores con sus respectivos datos
+    book_manager = LibraryManager(books_data)
+    user_manager = UserManager(users_data)
+
+    # Registrar inicio del sistema
+    log_activity("system", "system_start", "Application initialized")
     while True:
         option = main_menu()
         if option == "1":
-            print("Add a new book:")
-            title = input("Title: ")
-            author = input("Author: ")
-            year = int(input("Year: "))
-            gender = input("Gender: ")
-            book_id = manager.add_book(title, author, year, gender)  
-            print(f"✅ Book added successfully! ID: {book_id}")
-
+            # ----------------- Admin menu--------------------
+            while True:
+                clear_screen()
+                option = admin_menu()
+                if option == "1":
+                    # ---------------- Book menu -----------------
+                    while True: 
+                        clear_screen()
+                        option = book_menu()
+                        if option == "1":
+                            # Add new book
+                            title = input("Title: ")
+                            author = input("Author: ")
+                            year = int(input("Year: "))
+                            gender = input("Gender: ")
+                            new_book = book_manager.add_book(title, author, year, gender)
+                            print(f"✅ {new_book.title} added successfully with ID: {new_book.id}")
+                            save_data("books", books_data)
+                        elif option == "2":
+                            # Search books
+                            term = input("Search term: ")
+                            results = book_manager.search_books(term)
+                            for book in results:
+                                print(f"{book.id}: {book.title} ({book.author})")
+                        elif option == "3":
+                            # Update book details
+                            pass
+                        elif option == "4":
+                            # Remove book
+                            pass
+                        elif option == "5":
+                            # View all books
+                            pass
+                        elif option == "6":
+                            break
+                        else:
+                            print("Invalid choice!")
+                elif option == "2":
+                    # ----------------- User menu--------------------
+                    while True:
+                        clear_screen()
+                        option = user_menu()
+                        if option == "1":
+                            # Register new user
+                            pass
+                        elif option == "2":
+                            # Search users
+                            pass
+                        elif option == "3":
+                            # View user details
+                            pass
+                        elif option == "4":
+                            # Deactivate user
+                            pass
+                        elif option == "5":
+                            # View all users
+                            pass
+                        elif option == "6":
+                            # Generate user report
+                            pass
+                        elif option == "7":
+                            break
+                        else:
+                            print("Invalid choice!")
+                elif option == "3":
+                    # --------------- Loans Menu ------------------
+                    while True:
+                        clear_screen()
+                        option = loans_menu()
+                        if option == "1":
+                            # Create new loan
+                            pass
+                        elif option == "2":
+                            # Process return
+                            pass
+                        elif option == "3":
+                            # View active loans
+                            pass
+                        elif option == "4":
+                            # View overdue loans
+                            pass
+                        elif option == "5":
+                            # View loan history
+                            pass
+                        elif option == "6":
+                            # Generate loan report
+                            pass
+                        elif option == "7":
+                            break
+                        else:
+                            print("Invalid choice!")
+                elif option == "4":
+                    pass  # Change password
+                elif option == "5":
+                    break
+                else:
+                    print("Invalid choice!")
         elif option == "2":
-            pass
+            # -------------------- Client Menu --------------------
+            while True:
+                clear_screen()
+                option = client_menu()
+                if option == "1":
+                    # ---------- Log in -----------
+                    pass
+                elif option == "2":
+                    # ---------- Register ---------
+                    pass
+                elif option == "3":
+                    break
+                else:
+                    print("Invalid choice!")
+        # Quit the program
         elif option == "3":
-            pass
-        elif option == "4":
-            book_id = input("ID: ")
-            manager.delete_book(book_id)
-        elif option == "5":
-            pass
-        elif option == "6":
-            pass
-        elif option == "7":
-            print("Register new user: ")
-            name = input("Name: ")
-            sex = input("Sex (F / M): ")
-            try:
-                email = validate_email(input("Email: "))
-            except EmailNotValidError as e:
-                print(f"Invalid email: {e}")
-            phone = input("Phone number: ")
-            new_user = u_manager.register_user(name, sex, email, phone)
-            print(f"✅ User added successfully! ID: {new_user}")
-            
-                
-        elif option == "0":
-            sys.exit("You exited the program.")
-        
+            sys.exit("You exited the program!")
+        else:
+            print("Invalid choice!")
 
 
 if __name__ == "__main__":
